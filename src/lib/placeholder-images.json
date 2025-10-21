@@ -1,3 +1,106 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-1",
+      "description": "A stunning wide shot of a futuristic city skyline at dusk for the hero section.",
+      "imageUrl": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxmdXR1cmlzdGljJTIwY2l0eXxlbnwwfHx8fDE3NjEwNTAyOTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "futuristic city"
+    },
+    {
+      "id": "movie-1",
+      "description": "Sci-fi movie poster with cosmic elements.",
+      "imageUrl": "https://images.unsplash.com/photo-1747846183588-4b1b5332b931?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3NtaWMlMjBvZHlzc2V5fGVufDB8fHx8MTc2MTA3MDQ4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cosmic odyssey"
+    },
+    {
+      "id": "movie-2",
+      "description": "Action movie poster with a cybernetic theme.",
+      "imageUrl": "https://images.unsplash.com/photo-1696258688634-281b377c97c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjeWJlcm5ldGljJTIwcmV2b2x0fGVufDB8fHx8MTc2MTA3MDQ4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cybernetic revolt"
+    },
+    {
+      "id": "movie-3",
+      "description": "Drama movie poster showing a lone warrior.",
+      "imageUrl": "https://images.unsplash.com/photo-1609166806809-5f7728648dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3YXJyaW9yJTIwbGFzdCUyMHN0YW5kfGVufDB8fHx8MTc2MTA3MDQ4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "warrior last stand"
+    },
+    {
+      "id": "movie-4",
+      "description": "Fantasy movie poster with an enchanted forest.",
+      "imageUrl": "https://images.unsplash.com/photo-1505028106030-e07ea1bd80c3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxlbmNoYW50ZWQlMjBmb3Jlc3R8ZW58MHx8fHwxNzYxMDYyNTUwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "enchanted forest"
+    },
+    {
+      "id": "movie-5",
+      "description": "Thriller movie poster with a detective in a city.",
+      "imageUrl": "https://images.unsplash.com/photo-1600328514421-b638f50cbf32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaXR5JTIwZGV0ZWN0aXZlfGVufDB8fHx8MTc2MTA3MDQ4NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "city detective"
+    },
+    {
+      "id": "movie-6",
+      "description": "Comedy movie poster with a vibrant, funny illustration.",
+      "imageUrl": "https://images.unsplash.com/photo-1619122550213-e9a141d42fb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmdW5ueSUyMGNvbWVkeXxlbnwwfHx8fDE3NjEwNzA0ODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "funny comedy"
+    },
+    {
+      "id": "movie-7",
+      "description": "Romance movie poster with a couple against a sunset.",
+      "imageUrl": "https://images.unsplash.com/photo-1609561026486-f5d4a3c4c660?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cm9tYW5jZSUyMHN1bnNldHxlbnwwfHx8fDE3NjEwMjA5OTB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "romance sunset"
+    },
+    {
+      "id": "movie-8",
+      "description": "Horror movie poster with a spooky, dark aesthetic.",
+      "imageUrl": "https://images.unsplash.com/photo-1698674592731-e1e969120a01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzcG9va3klMjBob3Jyb3J8ZW58MHx8fHwxNzYxMDcwNDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "spooky horror"
+    },
+    {
+      "id": "movie-9",
+      "description": "Documentary poster about nature.",
+      "imageUrl": "https://images.unsplash.com/photo-1687046576739-c9ffb32bc5dd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxuYXR1cmUlMjBkb2N1bWVudGFyeXxlbnwwfHx8fDE3NjA5ODg3NzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "nature documentary"
+    },
+    {
+      "id": "movie-10",
+      "description": "Sci-fi movie poster showing a portal.",
+      "imageUrl": "https://images.unsplash.com/photo-1678524492368-240e9df021df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzY2ktZmklMjBwb3J0YWx8ZW58MHx8fHwxNzYxMDcwNDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "sci-fi portal"
+    },
+    {
+      "id": "movie-11",
+      "description": "Animated movie poster with colorful characters.",
+      "imageUrl": "https://images.unsplash.com/photo-1740150589869-47d43e7d395a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhbmltYXRlZCUyMGNoYXJhY3RlcnN8ZW58MHx8fHwxNzYxMDcwNDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "animated characters"
+    },
+    {
+      "id": "movie-12",
+      "description": "Historical drama poster.",
+      "imageUrl": "https://images.unsplash.com/photo-1607427672021-a484a02c3f40?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxoaXN0b3JpY2FsJTIwZHJhbWF8ZW58MHx8fHwxNzYxMDAwMzI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "historical drama"
+    },
+    {
+      "id": "movie-13",
+      "description": "Space opera poster.",
+      "imageUrl": "https://images.unsplash.com/photo-1759938297207-a7a9a699ee04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzcGFjZSUyMG9wZXJhfGVufDB8fHx8MTc2MTAyNjg3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "space opera"
+    },
+    {
+      "id": "movie-14",
+      "description": "Noir film poster.",
+      "imageUrl": "https://images.unsplash.com/photo-1711281471163-0d7c96b79349?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxub2lyJTIwZmlsbXxlbnwwfHx8fDE3NjEwNjk3MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "noir film"
+    },
+    {
+      "id": "movie-15",
+      "description": "Indie film poster.",
+      "imageUrl": "https://images.unsplash.com/photo-1574462736864-5ee3f1075d88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxpbmRpZSUyMGZpbG18ZW58MHx8fHwxNzYwOTg4NjMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "indie film"
+    },
+    {
+      "id": "movie-16",
+      "description": "Western movie poster.",
+      "imageUrl": "https://images.unsplash.com/photo-1584772988869-dccc362700a6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZXN0ZXJuJTIwbW92aWV8ZW58MHx8fHwxNzYxMDE2ODI0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "western movie"
+    }
+  ]
 }
