@@ -10,7 +10,7 @@ export default function SplashPage() {
   useEffect(() => {
     const timer = setTimeout(() => {
       router.push('/welcome');
-    }, 2500); // 2.5-second delay
+    }, 2000); // 2-second delay
 
     return () => clearTimeout(timer); // Cleanup the timer
   }, [router]);
