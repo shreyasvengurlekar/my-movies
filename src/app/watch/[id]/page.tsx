@@ -22,11 +22,11 @@ export default function WatchPage({ params }: { params: { id: string } }) {
           </Link>
         </Button>
       </header>
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 flex-col lg:flex-row overflow-hidden">
         <main className="flex-1 overflow-y-auto">
           <VideoPlayer movie={movie} />
         </main>
-        <aside className="w-[350px] flex-shrink-0 border-l border-border bg-background">
+        <aside className="w-full lg:w-[350px] flex-shrink-0 border-l border-border bg-background flex flex-col h-[50vh] lg:h-full">
           <ChatPanel />
         </aside>
       </div>

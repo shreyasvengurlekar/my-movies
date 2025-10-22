@@ -18,7 +18,7 @@ export default function DashboardPage() {
 
   return (
     <AppShell>
-      <div className="flex-1 space-y-4 p-8 pt-6">
+      <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
         <h2 className="font-headline text-3xl font-bold tracking-tight">
           Dashboard
         </h2>
@@ -72,8 +72,8 @@ export default function DashboardPage() {
             </CardContent>
           </Card>
         </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-            <Card className="col-span-4">
+        <div className="grid gap-4 lg:grid-cols-7">
+            <Card className="col-span-1 lg:col-span-4">
                 <CardHeader>
                     <CardTitle>Recent Activity</CardTitle>
                     <CardDescription>You added 3 new movies this week.</CardDescription>
@@ -99,7 +99,7 @@ export default function DashboardPage() {
                   </div>
                 </CardContent>
             </Card>
-            <Card className="col-span-3">
+            <Card className="col-span-1 lg:col-span-3">
                 <CardHeader>
                     <CardTitle>Friends Online</CardTitle>
                     <CardDescription>Invite them to a watch party!</CardDescription>

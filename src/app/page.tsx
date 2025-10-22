@@ -15,7 +15,7 @@ export default function BrowsePage() {
   return (
     <AppShell>
       <div className="flex-1 space-y-8 lg:space-y-12">
-        <section className="relative h-[60vh] w-full">
+        <section className="relative h-[70vh] w-full">
           {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -29,7 +29,7 @@ export default function BrowsePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           <div className="absolute inset-0 flex items-end p-4 md:p-8 lg:p-12">
             <div className="max-w-2xl text-white">
-              <h1 className="font-headline text-4xl font-bold md:text-5xl lg:text-7xl text-foreground">
+              <h1 className="font-headline text-3xl font-bold md:text-5xl lg:text-7xl text-foreground">
                 {featuredMovie.title}
               </h1>
               <p className="mt-4 max-w-lg text-sm text-muted-foreground">
