@@ -39,14 +39,11 @@ export function AppSidebar({ user }: AppSidebarProps) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Clapperboard className="h-8 w-8 text-primary" />
-            <div className="overflow-hidden">
+            <div className="overflow-hidden group-data-[collapsible=icon]:hidden">
               <h2 className="font-headline text-lg font-semibold truncate">
                 My Movies
               </h2>
             </div>
-          </div>
-          <div className="block group-data-[collapsible=icon]:hidden">
-            <UserNav user={user} />
           </div>
         </div>
       </SidebarHeader>
