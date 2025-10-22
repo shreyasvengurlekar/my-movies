@@ -1,63 +1,102 @@
-import Image from 'next/image';
-import { AppShell } from '@/components/layout/AppShell';
-import { MovieCarousel } from '@/components/movies/MovieCarousel';
-import { Button } from '@/components/ui/button';
-import { MOCK_MOVIES } from '@/lib/data';
-import { PlayCircle, Plus } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+'use client';
 
-export default function BrowsePage() {
-  const trendingMovies = MOCK_MOVIES.slice(0, 8);
-  const newReleases = MOCK_MOVIES.slice(8, 16);
-  const featuredMovie = MOCK_MOVIES[0];
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-1');
+import { Clapperboard } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+export default function LandingPage() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
-    <AppShell>
-      <div className="flex-1 space-y-8 lg:space-y-12">
-        <section className="relative h-[60vh] lg:h-[70vh] w-full">
-          {heroImage && (
-            <Image
-              src={heroImage.imageUrl}
-              alt="Featured movie background"
-              fill
-              className="object-cover"
-              data-ai-hint={heroImage.imageHint}
-              priority
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-          <div className="absolute inset-0 flex items-end p-4 md:p-8 lg:p-12">
-            <div className="max-w-2xl text-white">
-              <h1 className="font-headline text-3xl md:text-5xl lg:text-6xl font-bold text-foreground">
-                {featuredMovie.title}
-              </h1>
-              <p className="mt-2 md:mt-4 max-w-lg text-xs md:text-sm text-muted-foreground">
-                {featuredMovie.description}
-              </p>
-              <div className="mt-4 md:mt-6 flex gap-4">
-                <Button size="lg" className="font-bold">
-                  <PlayCircle className="mr-2" />
-                  Play
-                </Button>
-                <Button size="lg" variant="secondary" className="font-bold">
-                  <Plus className="mr-2" />
-                  My List
-                </Button>
-              </div>
-            </div>
+    <div className="flex flex-col min-h-screen items-center justify-center bg-background p-4 text-center">
+      {isMounted && (
+        <div className="animate-fade-in-down">
+          <div className="flex justify-center items-center gap-4 mb-6 animate-pulse-slow">
+            <Clapperboard className="w-16 h-16 md:w-24 md:h-24 text-primary" />
           </div>
-        </section>
-
-        <main className="container mx-auto px-4 md:px-6 -mt-24 md:-mt-32 lg:-mt-40 space-y-8">
-          <MovieCarousel title="Trending Now" movies={trendingMovies} />
-          <MovieCarousel title="New Releases" movies={newReleases} />
-          <MovieCarousel
-            title="Recommended For You"
-            movies={[...trendingMovies].reverse()}
-          />
-        </main>
-      </div>
-    </AppShell>
+          <h1 className="font-headline text-5xl md:text-7xl font-bold animate-slide-up">
+            My Movies
+          </h1>
+          <p className="mt-4 max-w-md mx-auto text-muted-foreground animate-slide-up animation-delay-200">
+            Your personal cinema, shared with friends. Discover, watch, and discuss your favorite films together.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 animate-fade-in animation-delay-400">
+            <Button asChild size="lg" className="font-bold">
+              <Link href="/login">Log In</Link>
+            </Button>
+            <Button asChild size="lg" variant="secondary" className="font-bold">
+              <Link href="/signup">Sign Up</Link>
+            </Button>
+          </div>
+        </div>
+      )}
+      <style jsx>{`
+        @keyframes fade-in-down {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes slide-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+        @keyframes pulse-slow {
+          0%, 100% {
+            transform: scale(1);
+            filter: drop-shadow(0 0 5px hsl(var(--primary)));
+          }
+          50% {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px hsl(var(--primary)));
+          }
+        }
+        .animate-fade-in-down {
+          animation: fade-in-down 0.8s ease-out forwards;
+        }
+        .animate-slide-up {
+          animation: slide-up 0.8s ease-out forwards;
+        }
+        .animate-fade-in {
+          animation: fade-in 1s ease-out forwards;
+        }
+        .animate-pulse-slow {
+           animation: pulse-slow 3s infinite ease-in-out;
+        }
+        .animation-delay-200 {
+          animation-delay: 0.2s;
+          opacity: 0;
+          animation-fill-mode: forwards;
+        }
+        .animation-delay-400 {
+          animation-delay: 0.4s;
+          opacity: 0;
+          animation-fill-mode: forwards;
+        }
+      `}</style>
+    </div>
   );
 }

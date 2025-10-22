@@ -17,7 +17,7 @@ export default function WatchPage({ params }: { params: { id: string } }) {
     <div className="flex h-screen w-screen flex-col bg-black text-white">
       <header className="absolute top-0 left-0 z-20 p-4">
         <Button asChild variant="ghost" size="icon" className="h-10 w-10 bg-black/50 hover:bg-black/70">
-          <Link href="/">
+          <Link href="/browse">
             <ArrowLeft className="h-6 w-6" />
           </Link>
         </Button>

@@ -20,6 +20,9 @@ import {
   Download,
   Clapperboard,
   LayoutDashboard,
+  User as UserIcon,
+  CreditCard,
+  LogOut,
 } from 'lucide-react';
 import type { User } from '@/lib/types';
 import Link from 'next/link';
@@ -42,26 +45,24 @@ export function AppSidebar({ user }: AppSidebarProps) {
               </h2>
             </div>
           </div>
+          <div className="block group-data-[collapsible=icon]:hidden">
+            <UserNav user={user} />
+          </div>
         </div>
       </SidebarHeader>
       <SidebarContent className="p-2">
         <div className="flex flex-col gap-2 p-2 group-data-[collapsible=icon]:hidden">
-          <div className="md:hidden">
-            <UserNav user={user} />
-          </div>
-          <div className="hidden md:block">
-            <p className="text-sm font-medium leading-none truncate">{user.name}</p>
+           <p className="text-sm font-medium leading-none truncate">{user.name}</p>
             <p className="text-xs leading-none text-muted-foreground truncate">
               {user.email}
             </p>
-          </div>
         </div>
         <SidebarSeparator className="group-data-[collapsible=icon]:hidden" />
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild tooltip="Browse">
-                <Link href="/">
+                <Link href="/browse">
                   <Home />
                   <span>Browse</span>
                 </Link>
@@ -136,6 +137,40 @@ export function AppSidebar({ user }: AppSidebarProps) {
             </SidebarGroup>
           </>
         )}
+        
+        <div className="group-data-[collapsible=icon]:hidden">
+          <SidebarSeparator />
+          <SidebarGroup>
+            <SidebarGroupLabel>My Account</SidebarGroupLabel>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/dashboard/profile">
+                    <UserIcon />
+                    <span>Profile</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/dashboard/billing">
+                    <CreditCard />
+                    <span>Billing</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+               <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/login">
+                    <LogOut />
+                    <span>Log out</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroup>
+        </div>
+
 
       </SidebarContent>
       <SidebarFooter>
