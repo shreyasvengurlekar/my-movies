@@ -7,12 +7,12 @@ import { MOCK_USER } from '@/lib/data';
 export function AppShell({ children }: { children: ReactNode }) {
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen w-full">
         <AppSidebar user={MOCK_USER} />
-        <SidebarInset className="min-h-screen flex-1 flex-col !p-0">
+        <div className="flex flex-1 flex-col">
           <AppHeader user={MOCK_USER} />
           <main className="flex-1">{children}</main>
-        </SidebarInset>
+        </div>
       </div>
     </SidebarProvider>
   );
