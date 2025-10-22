@@ -20,10 +20,13 @@ import {
   Download,
   Clapperboard,
   LayoutDashboard,
+  LogOut,
+  CreditCard,
+  User as UserIcon,
 } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import type { User } from '@/lib/types';
 import Link from 'next/link';
+import { UserNav } from './UserNav';
 
 interface AppSidebarProps {
   user: User;
@@ -33,17 +36,28 @@ export function AppSidebar({ user }: AppSidebarProps) {
   return (
     <ShadcnSidebar>
       <SidebarHeader>
-        <div className="flex items-center gap-3">
-          <Clapperboard className="h-8 w-8 text-primary" />
-          <div className="overflow-hidden">
-            <h2 className="font-headline text-lg font-semibold truncate">My Movies</h2>
-            <p className="text-xs text-muted-foreground truncate">
-              {user.email}
-            </p>
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Clapperboard className="h-8 w-8 text-primary" />
+            <div className="overflow-hidden">
+              <h2 className="font-headline text-lg font-semibold truncate">
+                My Movies
+              </h2>
+            </div>
+          </div>
+          <div className="block group-data-[collapsible=icon]:hidden">
+             <UserNav user={user} />
           </div>
         </div>
       </SidebarHeader>
       <SidebarContent className="p-2">
+        <div className="flex flex-col gap-2 p-2 group-data-[collapsible=icon]:hidden">
+            <p className="text-sm font-medium leading-none truncate">{user.name}</p>
+            <p className="text-xs leading-none text-muted-foreground truncate">
+              {user.email}
+            </p>
+        </div>
+        <SidebarSeparator className="group-data-[collapsible=icon]:hidden" />
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
@@ -123,18 +137,53 @@ export function AppSidebar({ user }: AppSidebarProps) {
             </SidebarGroup>
           </>
         )}
+
+        <div className="group-data-[collapsible=icon]:hidden">
+          <SidebarSeparator />
+          <SidebarGroup>
+            <SidebarGroupLabel>My Account</SidebarGroupLabel>
+            <SidebarMenu>
+               <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/dashboard/profile">
+                    <UserIcon />
+                    <span>Profile</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/dashboard/billing">
+                    <CreditCard />
+                    <span>Billing</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+               <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/login">
+                    <LogOut />
+                    <span>Log out</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroup>
+        </div>
+
+
       </SidebarContent>
       <SidebarFooter>
-         <SidebarMenu>
-            <SidebarMenuItem>
-              <SidebarMenuButton asChild>
-                <Link href="#">
-                  <LifeBuoy />
-                  <span>Support</span>
-                </Link>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          </SidebarMenu>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton asChild>
+              <Link href="#">
+                <LifeBuoy />
+                <span>Support</span>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarFooter>
     </ShadcnSidebar>
   );
