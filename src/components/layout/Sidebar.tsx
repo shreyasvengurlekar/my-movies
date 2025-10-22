@@ -26,7 +26,6 @@ import {
 } from 'lucide-react';
 import type { User } from '@/lib/types';
 import Link from 'next/link';
-import { UserNav } from './UserNav';
 
 interface AppSidebarProps {
   user: User;
@@ -44,9 +43,6 @@ export function AppSidebar({ user }: AppSidebarProps) {
                 My Movies
               </h2>
             </div>
-          </div>
-          <div className="block group-data-[collapsible=icon]:hidden">
-             <UserNav user={user} />
           </div>
         </div>
       </SidebarHeader>
