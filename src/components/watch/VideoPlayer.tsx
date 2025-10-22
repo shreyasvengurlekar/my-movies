@@ -33,21 +33,21 @@ export function VideoPlayer({ movie }: VideoPlayerProps) {
         />
       )}
       <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-        <Button variant="ghost" size="icon" className="w-24 h-24">
-            <Play className="w-20 h-20" />
+        <Button variant="ghost" size="icon" className="w-16 h-16 md:w-24 md:h-24">
+            <Play className="w-14 h-14 md:w-20 md:h-20" />
         </Button>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className="absolute bottom-0 left-0 right-0 p-2 md:p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
         <div className="w-full h-1 bg-gray-600 rounded">
           <div className="w-1/3 h-full bg-primary rounded"></div>
         </div>
         <div className="flex items-center justify-between mt-2">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1 md:gap-4">
             <Button variant="ghost" size="icon">
               <Play className="h-6 w-6" />
             </Button>
-            <div className="flex items-center gap-2 w-32">
+            <div className="flex items-center gap-2 w-24 md:w-32">
               <Button variant="ghost" size="icon" className="h-8 w-8">
                 <Volume2 className="h-5 w-5" />
               </Button>
@@ -55,10 +55,10 @@ export function VideoPlayer({ movie }: VideoPlayerProps) {
             </div>
             <span className="text-xs">15:32 / 45:10</span>
           </div>
-          <div className="flex items-center gap-2">
-            <h3 className="font-semibold">{movie.title}</h3>
+          <div className="flex-1 text-center px-4 hidden md:block">
+            <h3 className="font-semibold truncate">{movie.title}</h3>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1 md:gap-2">
             <Popover>
               <PopoverTrigger asChild>
                 <Button variant="ghost" size="icon">

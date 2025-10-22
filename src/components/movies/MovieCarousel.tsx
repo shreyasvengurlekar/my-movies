@@ -16,7 +16,7 @@ interface MovieCarouselProps {
 export function MovieCarousel({ title, movies }: MovieCarouselProps) {
   return (
     <section className="space-y-4 py-4">
-      <h2 className="font-headline text-2xl font-bold tracking-tight">{title}</h2>
+      <h2 className="font-headline text-xl md:text-2xl font-bold tracking-tight">{title}</h2>
       <Carousel
         opts={{
           align: 'start',
@@ -24,15 +24,15 @@ export function MovieCarousel({ title, movies }: MovieCarouselProps) {
         }}
         className="w-full"
       >
-        <CarouselContent>
+        <CarouselContent className="-ml-2 md:-ml-4">
           {movies.map((movie) => (
-            <CarouselItem key={movie.id} className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6">
+            <CarouselItem key={movie.id} className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6 pl-2 md:pl-4">
               <MovieCard movie={movie} />
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="ml-12" />
-        <CarouselNext className="mr-12" />
+        <CarouselPrevious className="ml-12 hidden md:flex" />
+        <CarouselNext className="mr-12 hidden md:flex" />
       </Carousel>
     </section>
   );
