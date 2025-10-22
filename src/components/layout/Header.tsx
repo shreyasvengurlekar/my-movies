@@ -22,17 +22,17 @@ interface AppHeaderProps {
 export function AppHeader({ user }: AppHeaderProps) {
   const { isMobile } = useSidebar();
   return (
-    <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm md:px-6">
+    <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-4 border-b bg-background/80 px-4 backdrop-blur-sm sm:px-6">
        <div className="flex items-center gap-2">
         <SidebarTrigger className="md:hidden" />
-        <Clapperboard className="h-7 w-7 text-primary md:hidden" />
+        <Clapperboard className="h-7 w-7 text-primary hidden sm:block md:hidden" />
       </div>
 
-      <div className="relative flex-1 hidden md:flex">
+      <div className="relative flex-1 hidden md:block">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           placeholder="Search movies..."
-          className="w-full max-w-sm pl-10"
+          className="w-full max-w-xs"
         />
       </div>
 

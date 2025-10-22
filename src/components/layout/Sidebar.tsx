@@ -42,17 +42,19 @@ export function AppSidebar({ user }: AppSidebarProps) {
               </h2>
             </div>
           </div>
-          <div className="block group-data-[collapsible=icon]:hidden">
-             <UserNav user={user} />
-          </div>
         </div>
       </SidebarHeader>
       <SidebarContent className="p-2">
         <div className="flex flex-col gap-2 p-2 group-data-[collapsible=icon]:hidden">
+          <div className="md:hidden">
+            <UserNav user={user} />
+          </div>
+          <div className="hidden md:block">
             <p className="text-sm font-medium leading-none truncate">{user.name}</p>
             <p className="text-xs leading-none text-muted-foreground truncate">
               {user.email}
             </p>
+          </div>
         </div>
         <SidebarSeparator className="group-data-[collapsible=icon]:hidden" />
         <SidebarGroup>
