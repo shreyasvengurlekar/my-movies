@@ -20,12 +20,10 @@ import {
   Download,
   Clapperboard,
   LayoutDashboard,
-  LogOut,
-  CreditCard,
-  User as UserIcon,
 } from 'lucide-react';
 import type { User } from '@/lib/types';
 import Link from 'next/link';
+import { UserNav } from './UserNav';
 
 interface AppSidebarProps {
   user: User;
@@ -43,6 +41,9 @@ export function AppSidebar({ user }: AppSidebarProps) {
                 My Movies
               </h2>
             </div>
+          </div>
+          <div className="block group-data-[collapsible=icon]:hidden">
+             <UserNav user={user} />
           </div>
         </div>
       </SidebarHeader>
@@ -133,40 +134,6 @@ export function AppSidebar({ user }: AppSidebarProps) {
             </SidebarGroup>
           </>
         )}
-
-        <div className="group-data-[collapsible=icon]:hidden">
-          <SidebarSeparator />
-          <SidebarGroup>
-            <SidebarGroupLabel>My Account</SidebarGroupLabel>
-            <SidebarMenu>
-               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/dashboard/profile">
-                    <UserIcon />
-                    <span>Profile</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/dashboard/billing">
-                    <CreditCard />
-                    <span>Billing</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-               <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/login">
-                    <LogOut />
-                    <span>Log out</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-            </SidebarMenu>
-          </SidebarGroup>
-        </div>
-
 
       </SidebarContent>
       <SidebarFooter>
