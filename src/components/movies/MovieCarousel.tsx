@@ -26,7 +26,7 @@ export function MovieCarousel({ title, movies }: MovieCarouselProps) {
       >
         <CarouselContent className="-ml-2 md:-ml-4">
           {movies.map((movie) => (
-            <CarouselItem key={movie.id} className="basis-1/3 sm:basis-1/4 md:basis-1/5 lg:basis-1/6 xl:basis-1/8 pl-2 md:pl-4">
+            <CarouselItem key={movie.id} className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/8 pl-2 md:pl-4">
               <MovieCard movie={movie} />
             </CarouselItem>
           ))}

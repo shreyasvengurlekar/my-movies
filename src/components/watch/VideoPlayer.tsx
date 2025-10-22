@@ -44,16 +44,16 @@ export function VideoPlayer({ movie }: VideoPlayerProps) {
         </div>
         <div className="flex items-center justify-between mt-2">
           <div className="flex items-center gap-1 md:gap-4">
-            <Button variant="ghost" size="icon">
-              <Play className="h-6 w-6" />
+            <Button variant="ghost" size="icon" className="h-8 w-8 md:h-10 md:w-10">
+              <Play className="h-5 w-5 md:h-6 md:w-6" />
             </Button>
-            <div className="flex items-center gap-2 w-24 md:w-32">
+            <div className="flex items-center gap-2 w-24">
               <Button variant="ghost" size="icon" className="h-8 w-8">
                 <Volume2 className="h-5 w-5" />
               </Button>
               <Slider defaultValue={[50]} max={100} step={1} />
             </div>
-            <span className="text-xs">15:32 / 45:10</span>
+            <span className="text-xs hidden sm:inline">15:32 / 45:10</span>
           </div>
           <div className="flex-1 text-center px-4 hidden md:block">
             <h3 className="font-semibold truncate">{movie.title}</h3>
@@ -61,8 +61,8 @@ export function VideoPlayer({ movie }: VideoPlayerProps) {
           <div className="flex items-center gap-1 md:gap-2">
             <Popover>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Settings className="h-6 w-6" />
+                <Button variant="ghost" size="icon" className="h-8 w-8 md:h-10 md:w-10">
+                  <Settings className="h-5 w-5 md:h-6 md:w-6" />
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-60">
@@ -88,14 +88,14 @@ export function VideoPlayer({ movie }: VideoPlayerProps) {
                     </div>
                     <div className="flex items-center space-x-2">
                         <RadioGroupItem value="480p" id="q-480" />
-                        <Label htmlFor="q-480">480p</Label>
+                        <Label htmlFor="q-480">480p</Label>c
                     </div>
                   </RadioGroup>
                 </div>
               </PopoverContent>
             </Popover>
-            <Button variant="ghost" size="icon">
-              <Maximize className="h-6 w-6" />
+            <Button variant="ghost" size="icon" className="h-8 w-8 md:h-10 md:w-10">
+              <Maximize className="h-5 w-5 md:h-6 md:w-6" />
             </Button>
           </div>
         </div>

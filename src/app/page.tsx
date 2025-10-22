@@ -15,7 +15,7 @@ export default function BrowsePage() {
   return (
     <AppShell>
       <div className="flex-1 space-y-8 lg:space-y-12">
-        <section className="relative h-[60vh] md:h-[70vh] w-full">
+        <section className="relative h-[60vh] lg:h-[70vh] w-full">
           {heroImage && (
             <Image
               src={heroImage.imageUrl}
@@ -29,13 +29,13 @@ export default function BrowsePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
           <div className="absolute inset-0 flex items-end p-4 md:p-8 lg:p-12">
             <div className="max-w-2xl text-white">
-              <h1 className="font-headline text-3xl md:text-5xl lg:text-7xl font-bold text-foreground">
+              <h1 className="font-headline text-3xl md:text-5xl lg:text-6xl font-bold text-foreground">
                 {featuredMovie.title}
               </h1>
-              <p className="mt-4 max-w-lg text-sm text-muted-foreground">
+              <p className="mt-2 md:mt-4 max-w-lg text-xs md:text-sm text-muted-foreground">
                 {featuredMovie.description}
               </p>
-              <div className="mt-6 flex gap-4">
+              <div className="mt-4 md:mt-6 flex gap-4">
                 <Button size="lg" className="font-bold">
                   <PlayCircle className="mr-2" />
                   Play
@@ -49,7 +49,7 @@ export default function BrowsePage() {
           </div>
         </section>
 
-        <main className="container mx-auto px-4 md:px-6 -mt-16 md:-mt-24 lg:-mt-32 space-y-8">
+        <main className="container mx-auto px-4 md:px-6 -mt-24 md:-mt-32 lg:-mt-40 space-y-8">
           <MovieCarousel title="Trending Now" movies={trendingMovies} />
           <MovieCarousel title="New Releases" movies={newReleases} />
           <MovieCarousel

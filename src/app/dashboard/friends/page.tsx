@@ -39,7 +39,7 @@ export default function FriendsPage() {
               <div className="flex w-full max-w-sm items-center space-x-2 mb-6">
                   <Input type="email" placeholder="friend@example.com" />
                   <Button type="submit">
-                      <PlusCircle className="mr-2 h-4 w-4" /> Add Friend
+                      <PlusCircle className="mr-2 h-4 w-4" /> Add
                   </Button>
               </div>
               <div className="hidden md:block">
