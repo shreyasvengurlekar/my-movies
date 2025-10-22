@@ -21,8 +21,7 @@ export default function WelcomePage() {
       <div className="w-full max-w-4xl mx-auto [perspective:1000px]">
         <div className={cn(
           "relative w-full transition-transform duration-700 [transform-style:preserve-3d]",
-          isFlipped === 'login' && "[transform:rotateY(-180deg)]",
-          isFlipped === 'signup' && "[transform:rotateY(180deg)]"
+          isFlipped && "[transform:rotateY(180deg)]"
         )}>
           {/* Front face: The choice */}
           <div className="[backface-visibility:hidden] w-full">
@@ -44,22 +43,13 @@ export default function WelcomePage() {
             </div>
           </div>
 
-          {/* Back face: Login form */}
+          {/* Back face: Login/Signup form */}
           <div className={cn(
-            "absolute top-0 left-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]",
-            isFlipped === 'login' && "z-10"
+            "absolute top-0 left-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)]"
           )}>
-            <AuthForm type="login" onBack={() => setIsFlipped(null)} />
+            {isFlipped === 'login' && <AuthForm type="login" onBack={() => setIsFlipped(null)} />}
+            {isFlipped === 'signup' && <AuthForm type="signup" onBack={() => setIsFlipped(null)} />}
           </div>
-          
-           {/* Back face: Signup form */}
-          <div className={cn(
-            "absolute top-0 left-0 w-full h-full [backface-visibility:hidden]",
-             isFlipped === 'signup' && "z-10 [transform:rotateY(-180deg)]"
-          )}>
-             <AuthForm type="signup" onBack={() => setIsFlipped(null)} />
-          </div>
-
         </div>
       </div>
     </div>
@@ -75,6 +65,10 @@ interface ChoiceCardProps {
 }
 
 function ChoiceCard({ icon: Icon, title, description, buttonText, onClick }: ChoiceCardProps) {
+  // We check which side is being flipped to in the parent to apply the correct action
+  // This feels a bit hacky, but it prevents the card from being clickable when it's on the "back"
+  const isLoginCard = title.includes('Back');
+
   return (
     <div
       className="group relative flex flex-col items-center justify-center p-8 bg-card rounded-lg border-2 border-transparent hover:border-primary hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
